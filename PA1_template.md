@@ -29,7 +29,7 @@ With that we can determine the mean and median values of steps per day:
 
 
 ```r
-mean(steps_per_day$steps, na.rm=TRUE)
+mean(steps_per_day$steps)
 ```
 
 ```
@@ -55,7 +55,7 @@ hist(steps_per_day$steps, main="Steps Per Day", xlab="Steps")
 
 ## What is the average daily activity pattern?
 
-In order to answer the question, what is the average daily activity pattern, we start by aggregating the data by interval and the mean of steps for each interval.
+In order to answer the question, what is the average daily activity pattern, we start by aggregating the data by interval producing the mean of steps for each interval.
 
 
 ```r
@@ -64,7 +64,7 @@ steps_per_interval <- aggregate(steps ~ interval, data=activity, mean, na.rm=TRU
 row.names(steps_per_interval) <- steps_per_interval$interval
 ```
 
-The results of this show that for the most part, the people in this study performed most of their walking during daylight hours.
+The results of this show that for the most part, the people in this study performed most of their walking during daylight hours and start their activity shortly after 5AM.
 
 
 ```r
@@ -167,7 +167,7 @@ hist(steps_per_day_filled$steps, main="Steps Per Day", xlab="Steps")
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-We start by creating a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+In order to answer this question we start by creating a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 
 ```r
@@ -177,7 +177,7 @@ activity_filled$day_type <- "weekday"
 activity_filled[weekdays(strptime(activity_filled$date, '%Y-%m-%d'), TRUE) %in% c("Sat", "Sun"), ]$day_type <- "weekend"
 ```
 
-This plot shows the difference in activity between weekends and weekdays:
+We then plot the data to show the difference in activity between weekends and weekdays:
 
 
 ```r
