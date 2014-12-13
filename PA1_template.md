@@ -94,7 +94,7 @@ steps_per_interval$interval[which.max(steps_per_interval$steps)]
 ## [1] 835
 ```
 
-And with that we find that the most active period of time is 08:35, with a mean of 206.1698 steps taken during that interval.
+And with that we find that the most active period of time is 08:35, with a mean of 206.2 steps taken during that interval.
 
 ## Imputing missing values
 
