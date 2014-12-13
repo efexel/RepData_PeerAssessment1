@@ -1,11 +1,6 @@
 # Reproducible Research: Peer Assessment 1
 This is my work for the class [Reproducible Research](https://www.coursera.org/course/repdata).
 
-
-```r
-cachedata = FALSE
-cachemodels = FALSE
-```
 ## Loading and preprocessing the data
 
 The code below sets the working directory, unzips the file and reads it in.  If you run this code on your own system, please change the working directory to the location where your activity.zip and/or activity.csv file is stored.
